@@ -1,0 +1,106 @@
+
+{
+  "info": {
+    "name": "Dispatch Load Balancer API",
+    "description": "API tests for uploading orders, uploading vehicles, and generating a dispatch plan.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Upload Orders",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"orders\": [\n    {\n      \"orderId\": \"ORD-001\",\n      \"latitude\": 28.6139,\n      \"longitude\": 77.2090,\n      \"address\": \"New Delhi\",\n      \"packageWeight\": 10.5,\n      \"priority\": \"HIGH\"\n    },\n    {\n      \"orderId\": \"ORD-002\",\n      \"latitude\": 28.5355,\n      \"longitude\": 77.3910,\n      \"address\": \"Noida\",\n      \"packageWeight\": 5.0,\n      \"priority\": \"MEDIUM\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/dispatch/orders",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "dispatch", "orders"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response indicates success', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Upload Vehicles",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"vehicles\": [\n    {\n      \"vehicleId\": \"VEH-001\",\n      \"capacity\": 100.0,\n      \"currentLatitude\": 28.6139,\n      \"currentLongitude\": 77.2090,\n      \"currentAddress\": \"New Delhi Depot\"\n    },\n    {\n      \"vehicleId\": \"VEH-002\",\n      \"capacity\": 75.0,\n      \"currentLatitude\": 28.5355,\n      \"currentLongitude\": 77.3910,\n      \"currentAddress\": \"Noida Depot\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/dispatch/vehicles",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "dispatch", "vehicles"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response indicates success', function () { pm.expect(pm.response.json().success).to.eql(true); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Generate Dispatch Plan",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/dispatch/plan",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "dispatch", "plan"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response indicates success', function () { pm.expect(pm.response.json().success).to.eql(true); });",
+              "pm.test('Plan data is returned', function () { pm.expect(pm.response.json().data).to.be.an('object'); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
