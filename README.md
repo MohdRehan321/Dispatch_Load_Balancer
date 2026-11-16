@@ -240,12 +240,6 @@ The Phase 5 verification completed with:
 - 0 errors
 - 0 skipped
 
-## Sample Assessment Dataset
-
-The assessment target is a sample dataset of 30 delivery orders and 5 vehicles.
-
-Use the two upload endpoints to submit the dataset, then call the dispatch plan endpoint.
-
 ## Limitations
 
 - The optimizer uses a heuristic approach; it does not guarantee a globally optimal route.
