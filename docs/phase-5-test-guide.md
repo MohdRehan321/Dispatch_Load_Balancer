@@ -1,4 +1,4 @@
-# Phase 5 - Test Guide
+# Test Guide
 
 ## Test coverage added
 
