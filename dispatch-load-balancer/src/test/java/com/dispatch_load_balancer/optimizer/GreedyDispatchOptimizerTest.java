@@ -156,6 +156,7 @@ class GreedyDispatchOptimizerTest {
         assertEquals(BigDecimal.ZERO, result.routes().get(0).totalLoad());
         assertEquals(0.0, result.routes().get(0).totalDistanceKm());
     }
+<<<<<<< HEAD
 
     @Test
     void heavierOrderIsConsideredFirstWithinSamePriority() {
@@ -292,3 +293,7 @@ class GreedyDispatchOptimizerTest {
     }
 
 }
+=======
+}
+
+>>>>>>> f845e074c40d1f06fae4aba35239310840a672cd

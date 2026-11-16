@@ -42,6 +42,7 @@ class HaversineDistanceCalculatorTest {
                 calculator.calculate(28, 181, 28, 77)
         );
     }
+<<<<<<< HEAD
 
     @Test
     void distanceShouldBeSymmetric() {
@@ -72,4 +73,6 @@ class HaversineDistanceCalculatorTest {
         );
     }
 
+=======
+>>>>>>> f845e074c40d1f06fae4aba35239310840a672cd
 }

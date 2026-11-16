@@ -80,6 +80,7 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-database-postgresql</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
 		<!-- Swagger / OpenAPI -->
 		<dependency>
@@ -87,6 +88,8 @@
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>3.2.0</version>
 		</dependency>
+=======
+>>>>>>> f845e074c40d1f06fae4aba35239310840a672cd
 	</dependencies>
 
 	<build>

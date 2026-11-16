@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Dispatch_Load_Balancer.iml" filepath="$PROJECT_DIR$/.idea/Dispatch_Load_Balancer.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/dispatch-load-balancer.iml" filepath="$PROJECT_DIR$/.idea/dispatch-load-balancer.iml" />
+>>>>>>> f845e074c40d1f06fae4aba35239310840a672cd
     </modules>
   </component>
 </project>
