@@ -233,13 +233,6 @@ Run the complete test suite:
 .\mvnw.cmd clean test
 ```
 
-The Phase 5 verification completed with:
-
-- 39 tests
-- 0 failures
-- 0 errors
-- 0 skipped
-
 ## Limitations
 
 - The optimizer uses a heuristic approach; it does not guarantee a globally optimal route.
